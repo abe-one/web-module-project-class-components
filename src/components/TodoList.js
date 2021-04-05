@@ -1,10 +1,11 @@
 import React from "react";
+import Todo from "./Todo";
 
 const TodoList = ({ todos }) => {
   return (
     <section className="todo-list">
       {todos.map((todo) => {
-        return <div className="todo-item">{todo.task}</div>;
+        return <Todo task={todo.task} />;
       })}
     </section>
   );
