@@ -7,6 +7,7 @@ const Todo = ({ task, id, completed, toggleCompleted }) => {
     <div
       className={completed ? "completed" : ""}
       onClick={invokeToggleCompleted}
+      style={{ cursor: "pointer" }}
     >
       <p>{task}</p>
     </div>

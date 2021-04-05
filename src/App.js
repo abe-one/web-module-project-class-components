@@ -1,7 +1,8 @@
 import React from "react";
 import TodoList from "./components/TodoList";
-import Todo from "./components/Todo";
 import TodoForm from "./components/TodoForm";
+
+import "./styles.scss";
 
 const initialTodos = [
   {
@@ -21,6 +22,8 @@ const initialTodos = [
   },
 ];
 
+const initialTodoInput = "";
+
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -31,9 +34,15 @@ class App extends React.Component {
     super();
     this.state = {
       todos: initialTodos,
+      todoInput: initialTodoInput,
     };
   }
   // class methods to update state: completed boolean, add items, remove items
+
+  updateTodoInput = (input) =>
+    this.setState({
+      todoInput: input,
+    });
 
   addTodo = () => {};
 
@@ -53,6 +62,10 @@ class App extends React.Component {
         <TodoList
           todos={this.state.todos}
           toggleCompleted={this.toggleCompleted}
+        />
+        <TodoForm
+          input={this.state.todoInput}
+          updateInput={this.updateTodoInput}
         />
       </div>
     );
