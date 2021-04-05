@@ -1,4 +1,7 @@
 import React from "react";
+import TodoList from "./components/TodoList";
+import Todo from "./components/Todo";
+import TodoForm from "./components/TodoForm";
 
 const initialTodos = [
   {
@@ -27,15 +30,15 @@ class App extends React.Component {
   }
   // class methods to update state: completed boolean, add items, remove items
 
+  addTodo = () => {};
+
+  toggleCompleted = () => {};
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <div className="todo-list">
-          {this.state.todos.map((todo) => {
-            return <div className="todo-item">{todo.task}</div>;
-          })}
-        </div>
+        <TodoList todos={this.state.todos} />
       </div>
     );
   }
