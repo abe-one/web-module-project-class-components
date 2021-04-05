@@ -1,10 +1,14 @@
 import React from "react";
 
-const TodoForm = ({ input, updateInput }) => {
+const TodoForm = ({ input, updateInput, addTodo }) => {
   const invokeUpdateInput = (e) => updateInput(e.target.value);
+  const invokeAddTodo = (e) => {
+    e.preventDefault();
+    addTodo();
+  };
 
   return (
-    <form>
+    <form onSubmit={invokeAddTodo}>
       <input
         name="todoInput"
         type="string"
@@ -12,6 +16,7 @@ const TodoForm = ({ input, updateInput }) => {
         onChange={invokeUpdateInput}
         placeholder="Add something to do"
       ></input>
+      <button type="submit">Add Todo</button>
     </form>
   );
 };

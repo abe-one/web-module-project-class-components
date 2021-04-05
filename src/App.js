@@ -44,7 +44,18 @@ class App extends React.Component {
       todoInput: input,
     });
 
-  addTodo = () => {};
+  addTodo = () => {
+    this.setState({
+      todos: [
+        ...this.state.todos,
+        {
+          task: this.state.todoInput,
+          id: Date.now(),
+          completed: false,
+        },
+      ],
+    });
+  };
 
   toggleCompleted = (id) => {
     const newTodos = this.state.todos.map((todo) =>
@@ -66,6 +77,7 @@ class App extends React.Component {
         <TodoForm
           input={this.state.todoInput}
           updateInput={this.updateTodoInput}
+          addTodo={this.addTodo}
         />
       </div>
     );
