@@ -30,12 +30,9 @@ button {
 
 .completed {
   text-decoration: line-through;
+  color: #00000080;
 }
 
 .odd {
-  background-color: green;
-}
-
-.todo-item {
-  background-color: red;
+  background-color: #00000010;
 }
