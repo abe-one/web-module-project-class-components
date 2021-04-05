@@ -5,6 +5,11 @@ import TodoForm from "./components/TodoForm";
 
 const initialTodos = [
   {
+    task: "Open app",
+    id: 1234567890122,
+    completed: true,
+  },
+  {
     task: "List things to do",
     id: 1234567890123,
     completed: false,
