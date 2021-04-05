@@ -55,6 +55,7 @@ class App extends React.Component {
         },
       ],
     });
+    this.setState({ todoInput: initialTodoInput });
   };
 
   toggleCompleted = (id) => {
@@ -66,9 +67,14 @@ class App extends React.Component {
     });
   };
 
+  clearCompleted = () => {
+    const incompleteTodos = this.state.todos.filter((todo) => !todo.completed);
+    this.setState({ todos: incompleteTodos });
+  };
+
   render() {
     return (
-      <div>
+      <div className="app-container">
         <h2>Welcome to your Todo App!</h2>
         <TodoList
           todos={this.state.todos}
@@ -78,6 +84,7 @@ class App extends React.Component {
           input={this.state.todoInput}
           updateInput={this.updateTodoInput}
           addTodo={this.addTodo}
+          clearCompleted={this.clearCompleted}
         />
       </div>
     );
