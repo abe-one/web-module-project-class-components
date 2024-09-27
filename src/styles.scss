@@ -1,0 +1,38 @@
+@import "./Normalize.css";
+
+* {
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+
+@mixin center-flex {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 0.25em 0.5em;
+  margin: 0.25em;
+}
+
+.app-container {
+  margin: 0.5em;
+  @include center-flex();
+}
+
+.todo-form,
+.form-buttons {
+  @include center-flex();
+  margin: 0.5em;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #00000080;
+}
+
+.odd {
+  background-color: #00000010;
+}
